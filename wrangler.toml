@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "jeff-inert-io"
+name = "portfolio-poc"
 main = "portfolio-astro/dist/_worker.js"
 compatibility_date = "2024-08-16"
 assets = { directory = "portfolio-astro/dist", binding = "ASSETS" }
@@ -8,4 +8,4 @@ assets = { directory = "portfolio-astro/dist", binding = "ASSETS" }
 command = "cd portfolio-astro && npm install && npm run build"
 
 [env.production]
-name = "jeff-inert-io"
+name = "portfolio-poc"
