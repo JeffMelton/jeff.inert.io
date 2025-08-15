@@ -6,6 +6,3 @@ assets = { directory = "portfolio-astro/dist", binding = "ASSETS" }
 
 [build]
 command = "cd portfolio-astro && npm install && npm run build"
-
-[env.production]
-name = "portfolio-poc"
