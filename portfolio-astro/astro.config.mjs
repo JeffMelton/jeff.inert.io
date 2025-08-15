@@ -3,8 +3,6 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://jeff.inert.io',
-  build: {
-    assets: '_astro'
-  }
+  adapter: cloudflare(),
+  site: 'https://jeff.inert.io'
 });
