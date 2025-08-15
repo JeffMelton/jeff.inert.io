@@ -1,0 +1,486 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Enterprise Platform Engineering Operations Suite - Jeff Melton">
+    <style>
+        /* Main Content */
+        main {
+            background: white;
+            margin: 2rem auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #34495e;
+        }
+
+        .content-section h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .content-section p, .content-section li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Component Cards */
+        .component-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid #3498db;
+        }
+
+        .component-card.health { border-left-color: #27ae60; }
+        .component-card.ops { border-left-color: #2980b9; }
+        .component-card.infra { border-left-color: #e74c3c; }
+        .component-card.dev { border-left-color: #f39c12; }
+
+        .component-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .tech-stack {
+            background: #e8f4f8;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .highlight-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box.info {
+            background: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .highlight-box.quote {
+            background: #e2e3e5;
+            border-left: 5px solid #6c757d;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3498db;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Tool Detail Cards */
+        .tool-detail {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .problem, .solution {
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .problem {
+            background: #ffe6e6;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .solution {
+            background: #e6f7e6;
+            border-left: 4px solid #27ae60;
+        }
+
+        .problem h5, .solution h5 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .content-section {
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                margin: 1rem;
+            }
+        }
+    </style>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Enterprise Platform Engineering Operations Suite</h1>
+            <p>A comprehensive toolkit for managing enterprise Kubernetes infrastructure at scale, engineered around real-world constraints and optimized for operational excellence.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>Overview</h2>
+            <p>This suite represents a complete DevOps platform built to address the unique challenges of managing <strong>6000+ Kubernetes clusters</strong> across edge locations with complex enterprise constraints. Rather than accepting workflow friction and manual processes, these tools encode institutional knowledge, automate complex integrations, and provide unified interfaces across disparate enterprise systems.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-number">99.9%</span>
+                    <span class="metric-label">Reduction in validation time<br>(days to minutes)</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">2000+</span>
+                    <span class="metric-label">Engineering hours<br>saved annually</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">$400K+</span>
+                    <span class="metric-label">Cost avoidance in<br>operational overhead</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">75%</span>
+                    <span class="metric-label">Reduction in incident<br>response time</span>
+                </div>
+            </div>
+
+            <h2>Core Design Principles</h2>
+            <ul>
+                <li><strong>Enterprise Constraint Navigation:</strong> Built to work around API limitations, security restrictions, and organizational silos</li>
+                <li><strong>Workflow Optimization:</strong> Each tool encodes best practices and reduces cognitive load through intelligent defaults</li>
+                <li><strong>Systems Integration:</strong> Unified interface across Kubernetes, vSphere, ServiceNow, Prometheus, Alertmanager, and Grafana</li>
+                <li><strong>Force Multiplication:</strong> Tools designed for individual productivity that scale to team effectiveness</li>
+                <li><strong>AI-Augmented Development:</strong> Leverages modern AI tooling for rapid iteration and sophisticated problem-solving</li>
+            </ul>
+
+            <h2>Technology Stack</h2>
+            <div style="margin: 1.5rem 0;">
+                <span class="tech-stack">Elixir (concurrent systems)</span>
+                <span class="tech-stack">Rust (performance-critical tools)</span>
+                <span class="tech-stack">Go (Kubernetes ecosystem)</span>
+                <span class="tech-stack">Kubernetes API</span>
+                <span class="tech-stack">vSphere API</span>
+                <span class="tech-stack">Prometheus</span>
+                <span class="tech-stack">Alertmanager</span>
+                <span class="tech-stack">ServiceNow</span>
+                <span class="tech-stack">Grafana</span>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Platform Components</h2>
+
+            <div class="component-card health">
+                <div class="component-title">🏥 Healthcheck - Fleet Monitoring at Scale</div>
+                <div class="tech-stack">Elixir</div>
+                
+                <div class="problem-solution">
+                    <div class="problem">
+                        <h5>Problem</h5>
+                        <p>Manual cluster validation across 6000+ clusters took 5-10 days, blocking critical operations and consuming massive engineering resources.</p>
+                    </div>
+                    <div class="solution">
+                        <h5>Solution</h5>
+                        <p>Elixir-based concurrent health monitoring system leveraging the actor model for fault-tolerant, massively parallel execution with intelligent timeout handling.</p>
+                    </div>
+                </div>
+                
+                <p><strong>Key Innovation:</strong> Leverages Elixir's actor model for fault-tolerant, massively concurrent health checks with graceful degradation when individual clusters are unavailable.</p>
+                
+                <p><strong>Business Impact:</strong> Transformed a 5-10 day process into 8-12 minutes of automated execution, saving 2000+ engineering hours annually and enabling rapid fleet-wide validation for critical operations.</p>
+            </div>
+
+            <div class="component-card ops">
+                <div class="component-title">🎯 Operations Automation Suite</div>
+                <div class="tech-stack">Rust</div>
+                <div class="tech-stack">Go</div>
+                
+                <div class="tool-detail">
+                    <h4>mudlark - Unified Infrastructure Dashboard</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>Scattered information across multiple systems requires extensive context switching and manual correlation between Kubernetes, vSphere, and monitoring systems.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Single-command view of cluster health spanning all systems with deep links to dashboards and queues, presented in a beautiful terminal interface.</p>
+                        </div>
+                    </div>
+                    <p><strong>Engineering Highlight:</strong> Integrates Kubernetes API, vSphere API, and web scraping into a unified interface with intelligent error handling and connection pooling.</p>
+                </div>
+
+                <div class="tool-detail">
+                    <h4>atul - Intelligent Alertmanager Integration</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>Creating ServiceNow incidents without corresponding alertmanager silences creates unnecessary on-call noise and requires manual coordination.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Derives alertmanager endpoints from cluster context, provides intelligent defaults, with full customization for complex scenarios.</p>
+                        </div>
+                    </div>
+                    <p><strong>Workflow Impact:</strong> Transforms a 5-minute, error-prone manual process into a 10-second automated action with built-in best practices.</p>
+                </div>
+
+                <div class="tool-detail">
+                    <h4>GPU Diagnostics Toolkit (cdmesg, clogs)</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>GPU infrastructure troubleshooting requires manual SSH to multiple nodes and correlation of logs across different systems.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Automated log collection and analysis across GPU-equipped nodes with formatted output optimized for incident documentation.</p>
+                        </div>
+                    </div>
+                    <p><strong>Technical Innovation:</strong> Kubernetes service discovery combined with parallel SSH execution and intelligent log filtering for rapid troubleshooting.</p>
+                </div>
+            </div>
+
+            <div class="component-card infra">
+                <div class="component-title">🚀 Infrastructure Management Tools</div>
+                
+                <div class="tool-detail">
+                    <h4>check_gpus - Comprehensive GPU Health Analysis</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>GPU issues span multiple layers (Kubernetes allocation, vSphere passthrough, physical hardware) requiring correlation across systems.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Single tool that queries both Kubernetes and vSphere APIs to provide complete GPU health context for all teams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-detail">
+                    <h4>VM Lifecycle Management (gvmp, vmrc)</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>VM operations require coordination between vSphere actions, Kubernetes node management, and workload lifecycle.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Intelligent VM power management with automatic node draining, health validation, and console access integration.</p>
+                        </div>
+                    </div>
+                    <p><strong>Safety Features:</strong> Automated pre-flight checks, graceful node draining, and staged validation with comprehensive timeout handling.</p>
+                </div>
+
+                <div class="tool-detail">
+                    <h4>Network Diagnostics (check_ssh)</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>Complex store networking with unmanaged configuration creates connectivity issues that are difficult to isolate.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Comprehensive network validation correlating Kubernetes node data with vSphere MAC addresses and cross-node connectivity testing.</p>
+                        </div>
+                    </div>
+                    <p><strong>Enterprise Value:</strong> Provides L1/L2 support teams with complete troubleshooting context in a single command.</p>
+                </div>
+            </div>
+
+            <div class="component-card dev">
+                <div class="component-title">🔧 Developer Experience Tools</div>
+                
+                <div class="tool-detail">
+                    <h4>cluster_not_ready_pods - Bottom-Up Problem Analysis</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>Pod failures across large clusters require filtering irrelevant namespaces and correlating issues to infrastructure problems.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Intelligent pod health analysis that filters to relevant workloads and groups issues by node for infrastructure-focused troubleshooting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-detail">
+                    <h4>set_k8s_context - Environment Integration</h4>
+                    <div class="problem-solution">
+                        <div class="problem">
+                            <h5>Problem</h5>
+                            <p>Working across multiple tools (kubectl, govc) requires manual environment variable management and context switching.</p>
+                        </div>
+                        <div class="solution">
+                            <h5>Solution</h5>
+                            <p>Automated environment setup that derives all necessary API credentials and endpoints from current Kubernetes context.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Enterprise Integration Features</h2>
+            
+            <h3>Security & Compliance</h3>
+            <ul>
+                <li><strong>No Hardcoded Credentials:</strong> All tools use existing Kubernetes authentication and service discovery</li>
+                <li><strong>Audit Trail:</strong> Structured logging for all operations with enterprise log aggregation compatibility</li>
+                <li><strong>Access Control:</strong> Leverages existing RBAC and enterprise authentication systems</li>
+            </ul>
+
+            <h3>Operational Excellence</h3>
+            <ul>
+                <li><strong>Error Handling:</strong> Comprehensive error handling with actionable error messages</li>
+                <li><strong>Timeout Management:</strong> Intelligent timeout policies prevent hanging operations</li>
+                <li><strong>Graceful Degradation:</strong> Tools continue operation despite partial system failures</li>
+                <li><strong>Observability:</strong> Built-in logging and metrics for monitoring tool effectiveness</li>
+            </ul>
+
+            <h3>Scalability</h3>
+            <ul>
+                <li><strong>Concurrent Operations:</strong> Tools designed for parallel execution across large fleets</li>
+                <li><strong>Resource Efficiency:</strong> Minimal memory and CPU footprint even at enterprise scale</li>
+                <li><strong>Network Optimization:</strong> Connection pooling and DNS prewarming where applicable</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Development Philosophy</h2>
+            
+            <h3>AI-Augmented Engineering</h3>
+            <p>All tools in this suite were developed using AI-assisted programming, demonstrating:</p>
+            <ul>
+                <li><strong>Rapid Prototyping:</strong> Quick iteration from concept to production-ready tool</li>
+                <li><strong>Code Quality:</strong> AI assistance enables focus on architecture and business logic</li>
+                <li><strong>Documentation:</strong> Comprehensive documentation and error handling through AI collaboration</li>
+                <li><strong>Learning Acceleration:</strong> AI assistance accelerates domain expertise development</li>
+            </ul>
+
+            <h3>Iterative Optimization</h3>
+            <ul>
+                <li><strong>Continuous Improvement:</strong> Tools evolve based on daily usage patterns and pain points</li>
+                <li><strong>Performance Focus:</strong> Regular optimization based on real-world usage metrics</li>
+                <li><strong>User Experience:</strong> Interface design optimized for cognitive load reduction</li>
+                <li><strong>Maintainability:</strong> Clean, documented code designed for long-term maintenance</li>
+            </ul>
+
+            <div class="highlight-box quote">
+                <p>These tools are designed around the principle that <strong>enterprise friction should be solved through engineering, not accepted as unchangeable constraint</strong>. Each tool represents a decision to:</p>
+                <ul>
+                    <li>Automate rather than tolerate repetitive manual processes</li>
+                    <li>Integrate rather than context-switch between multiple systems</li>
+                    <li>Optimize rather than accept suboptimal workflows</li>
+                    <li>Scale rather than limit effectiveness to individual contributors</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box info">
+                <h4>Platform Philosophy</h4>
+                <p>This platform suite represents enterprise DevOps engineering focused on solving real problems through thoughtful automation, systems integration, and workflow optimization. Built by engineers, for engineers who refuse to accept that "enterprise complexity" requires sacrificing operational excellence.</p>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

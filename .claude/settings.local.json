@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.cloudflare.com)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(export:*)",
+      "Bash(git add:*)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}

@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Jeff Melton - DevOps & Platform Engineering Consultant">
+    <style>
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Case Studies Grid */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .case-study-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .case-study-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>DevOps & Platform Engineering Consultant</h1>
+            <p>I work across the entire problem-solving lifecycle—from identifying systemic issues that span multiple domains, to designing comprehensive solutions that address root causes, to building and implementing the technical platforms that make those solutions sustainable.</p>
+            <a href="#case-studies" class="cta-button">See My Work</a>
+        </div>
+    </section>
+
+    <section class="section" id="what-i-do">
+        <div class="container">
+            <h2>What I Do</h2>
+            <p>I specialize in diagnosing and solving technical problems that require both deep systems expertise and business context understanding. My work typically involves complex, multi-domain challenges where technical solutions must align with organizational realities and business objectives.</p>
+            
+            <p>Whether it's infrastructure that's constraining business growth, systems that don't integrate properly across departments, or operational processes that waste engineering resources—I work from problem identification through solution design to technical implementation. I don't just identify what's broken; I understand why it matters to the business and build sustainable platforms that prevent similar problems from recurring.</p>
+
+            <p>My approach combines technical depth with organizational insight, ensuring that solutions are not only technically sound but operationally viable and strategically aligned with business needs.</p>
+        </div>
+    </section>
+
+    <section class="section" id="tools">
+        <div class="container">
+            <h2>Tools & Platform Engineering</h2>
+            <p>I build comprehensive tooling platforms that transform operational friction into automated excellence. Rather than accepting enterprise constraints as unchangeable, I engineer solutions that work within real-world limitations while dramatically improving productivity and reliability.</p>
+            
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <h3>🏥 Fleet Health Monitoring</h3>
+                    <p><strong>Challenge:</strong> Manual cluster validation across 6000+ Kubernetes clusters took 5-10 days.<br>
+                    <strong>Solution:</strong> Elixir-based concurrent health monitoring system.<br>
+                    <strong>Impact:</strong> 99.9% time reduction (days to 8-12 minutes), 2000+ engineering hours saved annually.</p>
+                    <a href="/tools" class="read-more">View Full Platform →</a>
+                </div>
+                
+                <div class="case-study-card">
+                    <h3>🎯 Operations Automation</h3>
+                    <p><strong>Challenge:</strong> Daily operations required extensive context switching across multiple enterprise systems.<br>
+                    <strong>Solution:</strong> Unified dashboard and automation tools (Rust/Go) integrating Kubernetes, vSphere, ServiceNow, and monitoring systems.<br>
+                    <strong>Impact:</strong> 2-3 hours saved daily, 75% reduction in incident response time.</p>
+                    <a href="/tools" class="read-more">View Full Platform →</a>
+                </div>
+                
+                <div class="case-study-card">
+                    <h3>🚀 Infrastructure Management</h3>
+                    <p><strong>Challenge:</strong> Complex GPU and VM lifecycle management across hybrid infrastructure required manual coordination.<br>
+                    <strong>Solution:</strong> Intelligent automation with cross-system correlation and safety validation.<br>
+                    <strong>Impact:</strong> $400K+ operational overhead reduction, eliminated manual errors.</p>
+                    <a href="/tools" class="read-more">View Full Platform →</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem;">Platform Philosophy</h3>
+                <p style="font-style: italic; color: #666; max-width: 700px; margin: 0 auto;">
+                    "Enterprise friction should be solved through engineering, not accepted as unchangeable constraint. Each tool represents a decision to automate rather than tolerate, integrate rather than context-switch, and optimize rather than accept suboptimal workflows."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="case-studies">
+        <div class="container">
+            <h2>Case Studies</h2>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <h3>Enterprise System Recovery</h3>
+                    <p>Led a three-year organizational transformation project to restore operational capability after a large-scale strategic technology failure. Developed tools, processes, and coalitions to work around organizational dysfunction while systematically addressing root causes.</p>
+                    <a href="/case-studies/system-recovery" class="read-more">Read Full Case Study →</a>
+                </div>
+                
+                <div class="case-study-card">
+                    <h3>Platform Engineering at Scale</h3>
+                    <p>Designed and built a comprehensive DevOps platform managing 6000+ Kubernetes clusters across edge locations, transforming manual processes into automated excellence while working within enterprise constraints.</p>
+                    <a href="/case-studies/platform-engineering" class="read-more">Read Full Case Study →</a>
+                </div>
+                
+                <div class="case-study-card">
+                    <h3>Legacy System Modernization</h3>
+                    <p>Designed and implemented a migration strategy for aging infrastructure, ensuring business continuity while systematically updating core systems and improving operational efficiency.</p>
+                    <a href="/case-studies/modernization" class="read-more">Read Full Case Study →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="approach">
+        <div class="container">
+            <h2>My Approach</h2>
+            <p>Every organization is different, but the patterns of technical debt and systemic dysfunction are remarkably consistent. I start by understanding not just what's broken, but why it broke – what organizational or technical constraints led to the current state.</p>
+            
+            <p>Then I design solutions that work within your actual constraints, not theoretical ideal conditions. This often means building tools and processes that route around organizational limitations while gradually addressing root causes.</p>
+            
+            <p>The goal isn't just to solve the immediate problem, but to leave you with better systems, clearer processes, and the tools to prevent similar issues in the future.</p>
+        </div>
+    </section>
+</BaseLayout>
