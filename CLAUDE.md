@@ -20,11 +20,21 @@ The site consists of HTML files showcasing professional experience, case studies
 
 ## Repository Structure
 
-- `main.html` - Primary landing page with hero section, overview, and case studies
-- `tools.html` - Detailed technical documentation of enterprise platform engineering tools and their implementation
+**Legacy Files (preserved for reference):**
+- `main.html` - Original landing page with hero section, overview, and case studies
+- `tools.html` - Original technical documentation of enterprise platform engineering tools
 
-### Migration to Cloudflare Workers + Astro
-The project is transitioning from static HTML to Astro framework on Cloudflare Workers for enhanced capabilities while maintaining simplicity and performance.
+**Current Astro Project:**
+- `portfolio-astro/` - Main Astro project directory
+  - `src/pages/` - Page components (index, tools, about, case-studies)
+  - `src/layouts/` - Base layout component with shared styling and navigation
+  - `src/components/` - Reusable components (future expansion)
+  - `public/` - Static assets and configuration files
+  - `dist/` - Built output for deployment (generated)
+- `wrangler.toml` - Cloudflare Workers deployment configuration
+
+### Migration to Cloudflare Workers + Astro ✅ COMPLETED
+Successfully migrated from static HTML to Astro framework deployed on Cloudflare Workers with enhanced capabilities while maintaining simplicity and performance.
 
 #### Framework Choice: Astro
 - Static-first with optional dynamic features
@@ -34,11 +44,12 @@ The project is transitioning from static HTML to Astro framework on Cloudflare W
 
 #### Enhanced Portfolio Architecture
 
-**Phase 1: Foundation Migration**
-- Convert to Astro project structure
-- Transform HTML files into Astro components
-- Preserve existing content and styling
-- Enhanced navigation & routing with SEO-optimized URLs
+**Phase 1: Foundation Migration ✅ COMPLETED**
+- ✅ Convert to Astro project structure
+- ✅ Transform HTML files into Astro components
+- ✅ Preserve existing content and styling  
+- ✅ Enhanced navigation & routing with SEO-optimized URLs
+- ✅ Successfully deployed to Cloudflare Workers
 
 **Phase 2: Content Enhancement**
 - Dynamic case studies (Markdown-based, filterable/searchable)
@@ -60,33 +71,61 @@ The project is transitioning from static HTML to Astro framework on Cloudflare W
 
 ## Development Approach
 
-**Current State**: Pure HTML/CSS static website with embedded styling
-**Target State**: Astro-based static site generated for Cloudflare Workers
+**Previous State**: Pure HTML/CSS static website with embedded styling
+**Current State**: Astro-based static site deployed on Cloudflare Workers ✅
 
-The migration preserves the simplicity and performance characteristics while enabling component-based development and enhanced features.
+The migration successfully preserved simplicity and performance characteristics while enabling component-based development and enhanced features.
+
+### Build and Deployment Commands
+
+```bash
+# Development
+cd portfolio-astro && npm run dev
+
+# Build for production
+cd portfolio-astro && npm run build
+
+# Deploy (automated via Cloudflare Workers CI/CD)
+git push origin main
+```
+
+### Deployment Configuration
+- **Cloudflare Workers**: Configured via `wrangler.toml` in repository root
+- **Build Command**: `cd portfolio-astro && npm install && npm run build`  
+- **Assets**: Static files from `portfolio-astro/dist/` (with `.assetsignore` filtering)
+- **Worker Script**: `portfolio-astro/dist/_worker.js`
 
 ### Key Architecture Decisions
 
-- **Self-contained files**: Each HTML file includes all necessary CSS styling internally
-- **No external dependencies**: No JavaScript frameworks, CSS libraries, or build tools
+- **Component-based structure**: Astro components with embedded styling for maintainability
+- **Static-first approach**: Pre-rendered HTML with minimal JavaScript for optimal performance
 - **Responsive design**: Mobile-first approach with CSS media queries for different screen sizes
 - **Professional styling**: Clean, modern design using system fonts and CSS gradients
+- **Deployment optimization**: Automated CI/CD with proper asset filtering and security
 
 ## Content Structure
 
-### main.html
+### Current Pages (Astro)
+
+**/ (index.astro)**
 - Hero section with professional introduction
 - "What I Do" section explaining consulting approach
 - "Tools & Platform Engineering" section with tool previews
 - Case studies grid with project highlights
 - Approach methodology section
 
-### tools.html
+**/tools (tools.astro)**
 - Comprehensive technical documentation of enterprise platform engineering suite
 - Detailed tool descriptions with problem/solution breakdowns
 - Technology stack information (Elixir, Rust, Go, Kubernetes)
 - Metrics and business impact data
 - Enterprise integration features
+
+**/about (about.astro)**
+- Professional background and personal context (placeholder for Phase 2)
+
+**/case-studies (case-studies/index.astro)**
+- Detailed project narratives (placeholder for Phase 2)
 
 ## Styling Patterns
 
@@ -98,14 +137,31 @@ The migration preserves the simplicity and performance characteristics while ena
 
 ## Navigation
 
-- Simple anchor-based navigation within pages
-- Cross-page navigation between main.html and tools.html
+- Clean, consistent navigation across all pages via BaseLayout component
+- SEO-friendly routes: `/`, `/tools`, `/about`, `/case-studies`
 - Responsive navigation that stacks on mobile devices
+- Active page highlighting (ready for Phase 2 enhancement)
 
 ## Development Context
 
-### Technical Approach
-This repository intentionally has no build tools, package managers, or deployment scripts. Files are served directly as static HTML/CSS, optimized for simplicity and direct deployment to Cloudflare Pages.
+### Next Steps - Phase 2 Planning
+With the foundation successfully deployed, the next phase focuses on content enhancement and interactive features:
+
+**Priority 1: Content Development**
+- Write detailed case study content (3 major projects)
+- Develop personal "About" page content
+- Create blog/insights section structure
+
+**Priority 2: Interactive Features**
+- Markdown-based case study system
+- Syntax highlighting for code examples
+- Filterable/searchable content
+- Contact form with Workers backend
+
+**Priority 3: Optimization**
+- Performance analytics and monitoring
+- A/B testing for conversion optimization
+- Advanced SEO optimization
 
 ### Content Development Notes
 When working with this codebase, remember:
