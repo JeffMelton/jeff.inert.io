@@ -4,5 +4,8 @@ main = "portfolio-astro/dist/_worker.js"
 compatibility_date = "2024-08-16"
 assets = { directory = "portfolio-astro/dist", binding = "ASSETS" }
 
+[[custom_domains]]
+domain = "jeff.inert.io"
+
 [build]
 command = "cd portfolio-astro && npm install && npm run build"
