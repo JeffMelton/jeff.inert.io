@@ -35,22 +35,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             text-align: center;
         }
 
-        .coming-soon {
-            text-align: center;
-            padding: 3rem;
-            background: #f8f9fa;
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .case-study-card {
+            background: white;
             border-radius: 10px;
-            margin: 2rem 0;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
-        .coming-soon h3 {
-            color: #34495e;
+        .case-study-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .case-study-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: #2c3e50;
         }
 
-        .coming-soon p {
-            color: #666;
-            font-size: 1.1rem;
+        .case-study-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
         }
     </style>
 
@@ -65,14 +87,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <section class="content-section">
             <h2>In-Depth Project Analysis</h2>
             
-            <div class="coming-soon">
-                <h3>📝 Content Coming Soon</h3>
-                <p>Detailed case studies are currently being prepared, including:</p>
-                <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
-                    <li><strong>Enterprise System Recovery:</strong> Three-year organizational transformation after strategic technology failure</li>
-                    <li><strong>Platform Engineering at Scale:</strong> Managing 6000+ Kubernetes clusters across edge locations</li>
-                    <li><strong>Legacy System Modernization:</strong> Infrastructure migration with business continuity</li>
-                </ul>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <h3>Platform Engineering at Scale</h3>
+                    <p><strong>Challenge:</strong> 6000+ Kubernetes cluster infrastructure with 5-10 day manual validation cycles costing ~$40M annually in downtime risk.<br>
+                    <strong>Solution:</strong> Engineered concurrent monitoring platform and integrated operations toolkit using Elixir, Rust, and Go.<br>
+                    <strong>Impact:</strong> $400K+ cost avoidance, 99.9% time reduction (days to minutes), 2000+ engineering hours reclaimed annually.</p>
+                    <a href="/case-studies/platform-engineering" class="read-more">Read Full Case Study →</a>
+                </div>
+                
+                <div class="case-study-card" style="opacity: 0.6;">
+                    <h3>Enterprise System Recovery</h3>
+                    <p>Three-year organizational transformation after strategic technology failure - developing tools, processes, and coalitions to work around organizational dysfunction while systematically addressing root causes.</p>
+                    <p style="font-style: italic; color: #666;">📝 Detailed case study coming soon</p>
+                </div>
+                
+                <div class="case-study-card" style="opacity: 0.6;">
+                    <h3>Legacy System Modernization</h3>
+                    <p>Infrastructure migration strategy ensuring business continuity while systematically updating core systems and improving operational efficiency.</p>
+                    <p style="font-style: italic; color: #666;">📝 Detailed case study coming soon</p>
+                </div>
             </div>
         </section>
     </div>
