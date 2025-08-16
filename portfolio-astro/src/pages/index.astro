@@ -124,8 +124,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         .case-study-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
             text-align: center;
+        }
+
+        .case-study-card h3 a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .case-study-card h3 a:hover {
+            color: #3498db;
         }
 
         .case-study-card p {
@@ -134,17 +143,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             text-align: left;
         }
 
-        .case-study-card .read-more {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: left;
-            display: block;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -205,32 +203,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <h2>Tools & Platform Engineering</h2>
             <div class="tools-content">
-                <p>I build comprehensive tooling platforms that transform operational friction into automated excellence. Rather than accepting enterprise constraints as unchangeable, I engineer solutions that work within real-world limitations while dramatically improving productivity and reliability.</p>
+                <p>I build comprehensive tooling platforms that transform operational friction into automated excellence. Rather than accepting enterprise constraints as unchangeable, I engineer solutions that work within real-world limitations while dramatically improving productivity and reliability. <a href="/tools" style="color: #3498db; text-decoration: none; font-weight: 600;">View Full Platform →</a></p>
             </div>
             
             <div class="case-studies-grid">
                 <div class="case-study-card">
-                    <h3>🏥 Fleet Health Monitoring</h3>
+                    <h3><a href="/tools">🏥 Fleet Health Monitoring</a></h3>
                     <p><strong>Challenge:</strong> Manual cluster validation across 6000+ Kubernetes clusters took 5-10 days.<br>
                     <strong>Solution:</strong> Elixir-based concurrent health monitoring system.<br>
                     <strong>Impact:</strong> 99.9% time reduction (days to 8-12 minutes), 2000+ engineering hours saved annually.</p>
-                    <a href="/tools" class="read-more">View Full Platform →</a>
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>🎯 Operations Automation</h3>
+                    <h3><a href="/tools">🎯 Operations Automation</a></h3>
                     <p><strong>Challenge:</strong> Daily operations required extensive context switching across multiple enterprise systems.<br>
                     <strong>Solution:</strong> Unified dashboard and automation tools (Rust/Go) integrating Kubernetes, vSphere, ServiceNow, and monitoring systems.<br>
                     <strong>Impact:</strong> 2-3 hours saved daily, 75% reduction in incident response time.</p>
-                    <a href="/tools" class="read-more">View Full Platform →</a>
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>🚀 Infrastructure Management</h3>
+                    <h3><a href="/tools">🚀 Infrastructure Management</a></h3>
                     <p><strong>Challenge:</strong> Complex GPU and VM lifecycle management across hybrid infrastructure required manual coordination.<br>
                     <strong>Solution:</strong> Intelligent automation with cross-system correlation and safety validation.<br>
                     <strong>Impact:</strong> $400K+ operational overhead reduction, eliminated manual errors.</p>
-                    <a href="/tools" class="read-more">View Full Platform →</a>
                 </div>
             </div>
 
@@ -248,27 +243,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h2>Case Studies</h2>
             <div class="case-studies-grid">
                 <div class="case-study-card">
-                    <h3>Legacy Infrastructure Modernization</h3>
+                    <h3><a href="/case-studies/legacy-infrastructure-modernization">Legacy Infrastructure Modernization</a></h3>
                     <p><strong>Challenge:</strong> InfoSec-mandated SLES 11 EOL upgrade across Fortune One retailer's 600+ locations while maintaining existing hardware to maximize asset depreciation.<br>
                     <strong>Solution:</strong> 18-month platform engineering transformation balancing compliance requirements with business constraints, building comprehensive operational capabilities.<br>
                     <strong>Impact:</strong> $2M+ cost avoidance, 150:1 location-to-engineer efficiency, zero-downtime migrations with sustainable Day One operations.</p>
-                    <a href="/case-studies/legacy-infrastructure-modernization" class="read-more">Read Full Case Study →</a>
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>Platform Engineering at Scale</h3>
+                    <h3><a href="/case-studies/platform-engineering">Platform Engineering at Scale</a></h3>
                     <p><strong>Challenge:</strong> 6000+ Kubernetes cluster infrastructure with 5-10 day manual validation cycles costing ~$40M annually in downtime risk.<br>
                     <strong>Solution:</strong> Engineered concurrent monitoring platform and integrated operations toolkit using Elixir, Rust, and Go.<br>
                     <strong>Impact:</strong> $400K+ cost avoidance, 99.9% time reduction (days to minutes), 2000+ engineering hours reclaimed annually.</p>
-                    <a href="/case-studies/platform-engineering" class="read-more">Read Full Case Study →</a>
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>Strategic Architecture & Enterprise Decision Dynamics</h3>
+                    <h3><a href="/case-studies/strategic-architecture">Strategic Architecture & Enterprise Decision Dynamics</a></h3>
                     <p><strong>Challenge:</strong> Design next-generation infrastructure for 600+ locations balancing VMware contract renewal, emerging AI/ML requirements, and enterprise CapEx constraints.<br>
                     <strong>Solution:</strong> Comprehensive architecture evaluation, vendor management, and financial analysis presenting optimal solutions while respecting business decision-making autonomy.<br>
                     <strong>Impact:</strong> Strategic foresight validated by subsequent organizational planning, demonstrating sophisticated enterprise consulting approach.</p>
-                    <a href="/case-studies/strategic-architecture" class="read-more">Read Full Case Study →</a>
                 </div>
             </div>
         </div>
