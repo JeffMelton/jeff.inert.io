@@ -77,6 +77,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             text-align: left;
         }
 
+        .what-i-do-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .what-i-do-content p {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            text-align: left;
+        }
+
+        .tools-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tools-content p {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            text-align: left;
+        }
+
         /* Case Studies Grid */
         .case-studies-grid {
             display: grid;
@@ -101,6 +125,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #2c3e50;
+            text-align: center;
         }
 
         .case-study-card p {
@@ -163,18 +188,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="section" id="what-i-do">
         <div class="container">
             <h2>What I Do</h2>
-            <p>I specialize in diagnosing and solving technical problems that require both deep systems expertise and business context understanding. My work typically involves complex, multi-domain challenges where technical solutions must align with organizational realities and business objectives.</p>
-            
-            <p>Whether it's infrastructure that's constraining business growth, systems that don't integrate properly across departments, or operational processes that waste engineering resources—I work from problem identification through solution design to technical implementation. I don't just identify what's broken; I understand why it matters to the business and build sustainable platforms that prevent similar problems from recurring.</p>
+            <div class="what-i-do-content">
+                <p>I specialize in diagnosing and solving technical problems that require both deep systems expertise and business context understanding. My work typically involves complex, multi-domain challenges where technical solutions must align with organizational realities and business objectives.</p>
+                
+                <p>Whether it's infrastructure that's constraining business growth, systems that don't integrate properly across departments, or operational processes that waste engineering resources—I work from problem identification through solution design to technical implementation. I don't just identify what's broken; I understand why it matters to the business and build sustainable platforms that prevent similar problems from recurring.</p>
 
-            <p>My approach combines technical depth with organizational insight, ensuring that solutions are not only technically sound but operationally viable and strategically aligned with business needs.</p>
+                <p>My approach combines technical depth with organizational insight, ensuring that solutions are not only technically sound but operationally viable and strategically aligned with business needs.</p>
+            </div>
         </div>
     </section>
 
     <section class="section" id="tools">
         <div class="container">
             <h2>Tools & Platform Engineering</h2>
-            <p>I build comprehensive tooling platforms that transform operational friction into automated excellence. Rather than accepting enterprise constraints as unchangeable, I engineer solutions that work within real-world limitations while dramatically improving productivity and reliability.</p>
+            <div class="tools-content">
+                <p>I build comprehensive tooling platforms that transform operational friction into automated excellence. Rather than accepting enterprise constraints as unchangeable, I engineer solutions that work within real-world limitations while dramatically improving productivity and reliability.</p>
+            </div>
             
             <div class="case-studies-grid">
                 <div class="case-study-card">
