@@ -65,6 +65,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             max-width: 800px;
         }
 
+        .approach-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .approach-content p {
+            margin-left: 3rem;
+            margin-right: 3rem;
+            text-align: left;
+        }
+
         /* Case Studies Grid */
         .case-studies-grid {
             display: grid;
@@ -220,9 +232,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
                 
                 <div class="case-study-card">
-                    <h3>Legacy System Modernization</h3>
-                    <p>Designed and implemented a migration strategy for aging infrastructure, ensuring business continuity while systematically updating core systems and improving operational efficiency.</p>
-                    <a href="/case-studies/modernization" class="read-more">Read Full Case Study →</a>
+                    <h3>Strategic Architecture & Enterprise Decision Dynamics</h3>
+                    <p><strong>Challenge:</strong> Design next-generation infrastructure for 600+ locations balancing VMware contract renewal, emerging AI/ML requirements, and enterprise CapEx constraints.<br>
+                    <strong>Solution:</strong> Comprehensive architecture evaluation, vendor management, and financial analysis presenting optimal solutions while respecting business decision-making autonomy.<br>
+                    <strong>Impact:</strong> Strategic foresight validated by subsequent organizational planning, demonstrating sophisticated enterprise consulting approach.</p>
+                    <a href="/case-studies/strategic-architecture" class="read-more">Read Full Case Study →</a>
                 </div>
             </div>
         </div>
@@ -231,11 +245,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="section" id="approach">
         <div class="container">
             <h2>My Approach</h2>
-            <p>Every organization is different, but the patterns of technical debt and systemic dysfunction are remarkably consistent. I start by understanding not just what's broken, but why it broke – what organizational or technical constraints led to the current state.</p>
-            
-            <p>Then I design solutions that work within your actual constraints, not theoretical ideal conditions. This often means building tools and processes that route around organizational limitations while gradually addressing root causes.</p>
-            
-            <p>The goal isn't just to solve the immediate problem, but to leave you with better systems, clearer processes, and the tools to prevent similar issues in the future.</p>
+            <div class="approach-content">
+                <p>Every organization is different, but the patterns of technical debt and systemic dysfunction are remarkably consistent. I start by understanding not just what's broken, but why it broke – what organizational or technical constraints led to the current state.</p>
+                
+                <p>Then I design solutions that work within your actual constraints, not theoretical ideal conditions. This often means building tools and processes that route around organizational limitations while gradually addressing root causes.</p>
+                
+                <p>The goal isn't just to solve the immediate problem, but to leave you with better systems, clearer processes, and the tools to prevent similar issues in the future.</p>
+            </div>
         </div>
     </section>
 </BaseLayout>
