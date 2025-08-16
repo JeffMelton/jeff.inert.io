@@ -1,0 +1,399 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Legacy Infrastructure Modernization - Case Study - Jeff Melton">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 3rem 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 2rem;
+            color: #34495e;
+        }
+
+        .content-section h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.5rem 2rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .content-section p, .content-section li {
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin-left: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section ol {
+            margin-left: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .executive-summary {
+            background: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .executive-summary h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-box {
+            background: #fff3cd;
+            border-left: 5px solid #f39c12;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .challenge-box h4 {
+            color: #d68910;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .solution-panel {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem;
+        }
+
+        .solution-panel.infrastructure { border-left: 5px solid #e74c3c; }
+        .solution-panel.organizational { border-left: 5px solid #9b59b6; }
+        .solution-panel.operational { border-left: 5px solid #27ae60; }
+
+        .solution-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .solution-title.infrastructure { color: #e74c3c; }
+        .solution-title.organizational { color: #9b59b6; }
+        .solution-title.operational { color: #27ae60; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem;
+        }
+
+        .impact-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #3498db;
+        }
+
+        .impact-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3498db;
+            display: block;
+        }
+
+        .impact-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .timeline {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem;
+            border-left: 4px solid #3498db;
+        }
+
+        .timeline h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .timeline-item strong {
+            color: #2c3e50;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .success-box h3 {
+            color: #155724;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .insight-box {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .insight-box h4 {
+            color: #0c5460;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 2rem 1rem;
+            }
+            
+            .content-section h2,
+            .content-section h3,
+            .content-section h4,
+            .content-section p,
+            .content-section li {
+                margin-left: 1rem;
+            }
+            
+            .content-section ul,
+            .content-section ol {
+                margin-left: 2rem;
+            }
+        }
+    </style>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Legacy Infrastructure Modernization</h1>
+            <p>18-month platform engineering transformation balancing InfoSec compliance mandates with business constraints across 600+ retail locations</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="content-section">
+            <div class="executive-summary">
+                <h3>Executive Summary</h3>
+                <p>Led comprehensive infrastructure modernization for a Fortune One retailer's 600+ location chain, transforming an InfoSec-mandated SLES 11 end-of-life upgrade into a strategic platform engineering initiative that established sustainable operational capabilities while working within business asset depreciation constraints.</p>
+            </div>
+
+            <h2>Strategic Challenge</h2>
+            <p>A Fortune One retailer faced a critical infrastructure modernization challenge driven by InfoSec mandate: SUSE Enterprise Linux 11 end-of-life required immediate upgrade across 600+ retail locations. However, business constraints demanded maximizing existing hardware asset depreciation, ruling out the typical hardware refresh approach.</p>
+
+            <div class="challenge-box">
+                <h4>Converging Pressures</h4>
+                <p><strong>Compliance Deadline:</strong> InfoSec mandate for SLES 11 EOL upgrade with non-negotiable timeline<br>
+                <strong>Business Constraint:</strong> Maintain existing Xen-on-SUSE infrastructure to maximize asset depreciation<br>
+                <strong>Operational Reality:</strong> Four-person engineering team could not sustain 600+ location operations without systematic platform engineering</p>
+            </div>
+
+            <h3>Enterprise Context & Constraints</h3>
+            <ul>
+                <li><strong>Compliance Driver:</strong> InfoSec-mandated SLES 11 end-of-life upgrade with firm deadline</li>
+                <li><strong>Business Constraint:</strong> Maintain existing Xen-on-SUSE stack to maximize hardware asset depreciation</li>
+                <li><strong>Operational Scale:</strong> 600+ retail locations across US and Puerto Rico</li>
+                <li><strong>Migration Windows:</strong> Single-night execution outside business hours per location</li>
+                <li><strong>Team Reality:</strong> Four-person engineering team with limited operational platform experience</li>
+                <li><strong>Organizational Dysfunction:</strong> Fragmented teams, competing priorities, historical conflicts</li>
+                <li><strong>Technical Debt:</strong> Minimal configuration management, monitoring, or automated operational processes</li>
+            </ul>
+
+            <h2>Systematic Platform Engineering Approach</h2>
+
+            <div class="solution-panel organizational">
+                <div class="solution-title organizational">🤝 Coalition Building & Stakeholder Alignment</div>
+                
+                <p><strong>Challenge:</strong> Multiple enterprise teams owned different infrastructure components with no alignment on operational requirements.</p>
+                
+                <p><strong>Strategic Response:</strong></p>
+                <ul>
+                    <li><strong>Stakeholder mapping</strong> across monitoring, configuration management, and security teams</li>
+                    <li><strong>Relationship rebuilding</strong> addressing historical conflicts and competing priorities</li>
+                    <li><strong>Consensus building</strong> around shared operational excellence goals</li>
+                    <li><strong>Value demonstration</strong> through incremental wins and clear business benefits</li>
+                </ul>
+                
+                <p><strong>Outcome:</strong> Transformed organizational resistance into collaborative partnership, enabling enterprise-wide resource utilization.</p>
+            </div>
+
+            <div class="solution-panel infrastructure">
+                <div class="solution-title infrastructure">🏗️ Infrastructure Modernization & Integration</div>
+                
+                <div class="timeline">
+                    <h4>18-Month Implementation Timeline</h4>
+                    <div class="timeline-item">
+                        <strong>Phase 1 (Months 1-6):</strong> Monitoring & Alerting Pipeline
+                        <ul>
+                            <li>Full monitoring coverage across all retail locations</li>
+                            <li>Alert deduplication and severity-based escalation</li>
+                            <li>Intelligent paging considering scheduled maintenance and dependencies</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Phase 2 (Months 7-12):</strong> Configuration Management Platform
+                        <ul>
+                            <li>Puppet ecosystem enhancement and customization</li>
+                            <li>GitOps-driven package deployment pipeline</li>
+                            <li>Staged release process (test → dev → stage → prod)</li>
+                            <li>Configuration drift prevention and remediation</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Phase 3 (Months 13-18):</strong> Operational Excellence
+                        <ul>
+                            <li>Comprehensive observability dashboards</li>
+                            <li>Enterprise SSH authentication integration</li>
+                            <li>ServiceNow ticketing queue optimization</li>
+                            <li>Audit trail and compliance automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-panel operational">
+                <div class="solution-title operational">⚡ Day One Operations Enablement</div>
+                
+                <p><strong>Vision:</strong> Ensure seamless operations from the first day after each location's migration completion.</p>
+                
+                <p><strong>Implementation:</strong></p>
+                <ul>
+                    <li><strong>Proactive Monitoring:</strong> Full visibility into infrastructure health before issues impact business operations</li>
+                    <li><strong>Automated Configuration:</strong> Puppet-based configuration management preventing manual errors and drift</li>
+                    <li><strong>Integrated Security:</strong> Active Directory-tied SSH access with automated audit trails</li>
+                    <li><strong>Operational Dashboards:</strong> Unified visibility across infrastructure, configuration, and ticketing systems</li>
+                </ul>
+                
+                <p><strong>Result:</strong> Four-person team successfully supporting 600+ location chain with enterprise-grade operational capabilities.</p>
+            </div>
+
+            <h2>Business Impact & Results</h2>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <span class="impact-number">600+</span>
+                    <span class="impact-label">Retail locations<br>operationally supported</span>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">150:1</span>
+                    <span class="impact-label">Location to engineer<br>efficiency ratio</span>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">$2M+</span>
+                    <span class="impact-label">Estimated cost avoidance<br>vs traditional staffing</span>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-number">18mo</span>
+                    <span class="impact-label">Infrastructure transformation<br>timeline</span>
+                </div>
+            </div>
+
+            <h3>Sustainable Operational Excellence</h3>
+            <ul>
+                <li><strong>Zero-downtime migrations:</strong> All 600+ locations successfully migrated within single-night windows</li>
+                <li><strong>Ongoing support model:</strong> Infrastructure continues operating effectively in my absence</li>
+                <li><strong>Scalable processes:</strong> Platform supports business growth without proportional team expansion</li>
+                <li><strong>Career advancement:</strong> Work quality recognized through promotion at project completion</li>
+            </ul>
+
+            <h2>Technical Innovation & Implementation</h2>
+
+            <h3>Enterprise Resource Optimization</h3>
+            <ul>
+                <li><strong>Monitoring Integration:</strong> Leveraged existing enterprise monitoring infrastructure to maximum capability</li>
+                <li><strong>Configuration Management:</strong> Enhanced robust Puppet ecosystem with custom modules and GitOps workflows</li>
+                <li><strong>Security Compliance:</strong> Active Directory integration providing seamless access management and audit trails</li>
+                <li><strong>Observability Platform:</strong> Unified dashboards spanning infrastructure, configuration, and operational metrics</li>
+            </ul>
+
+            <h3>Organizational Engineering</h3>
+            <ul>
+                <li><strong>Cross-team collaboration:</strong> Built working relationships across previously siloed enterprise teams</li>
+                <li><strong>Technical consensus building:</strong> Aligned competing priorities around shared operational excellence goals</li>
+                <li><strong>Change management:</strong> Navigated enterprise dysfunction while delivering technical solutions</li>
+                <li><strong>Knowledge transfer:</strong> Established sustainable practices for long-term team effectiveness</li>
+            </ul>
+
+            <div class="success-box">
+                <h3>Transformational Outcomes</h3>
+                <p><strong>Technical Achievement:</strong> Converted a tactical OS migration into a strategic platform engineering transformation that established enterprise-grade operational capabilities.</p>
+                
+                <p><strong>Organizational Impact:</strong> Demonstrated how systematic infrastructure thinking combined with relationship building can overcome enterprise dysfunction and deliver sustainable business value.</p>
+                
+                <p><strong>Long-term Success:</strong> Infrastructure platform continues enabling business operations years after implementation, proving the value of comprehensive platform engineering over tactical solutions.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4>Strategic Insight</h4>
+                <p>This case study exemplifies how platform engineering thinking—anticipating operational requirements, building coalitions across organizational boundaries, and implementing comprehensive infrastructure solutions—can transform tactical projects into strategic business enablers that deliver value far beyond the original scope.</p>
+            </div>
+
+            <h2>Key Differentiators Demonstrated</h2>
+            <ol>
+                <li><strong>Strategic Foresight:</strong> Recognized Day One operational requirements when others focused solely on migration mechanics</li>
+                <li><strong>Organizational Navigation:</strong> Successfully built coalitions across dysfunctional enterprise boundaries to enable technical solutions</li>
+                <li><strong>Comprehensive Platform Thinking:</strong> Designed integrated infrastructure stack addressing monitoring, configuration, security, and observability</li>
+                <li><strong>Scalable Architecture:</strong> Enabled small team to support enterprise-scale operations through systematic automation</li>
+                <li><strong>Sustainable Implementation:</strong> Created solutions that continue operating effectively without ongoing intervention</li>
+            </ol>
+        </section>
+    </div>
+</BaseLayout>
