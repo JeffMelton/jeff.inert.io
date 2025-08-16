@@ -5,7 +5,10 @@
       "Bash(node:*)",
       "Bash(npm:*)",
       "Bash(export:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:support.mailchannels.com)",
+      "WebFetch(domain:docs.mailchannels.net)",
+      "WebSearch"
     ],
     "defaultMode": "acceptEdits"
   }
