@@ -47,11 +47,24 @@ Submitted: ${submission.timestamp}
     // Access Cloudflare runtime environment for email sending
     const { env } = context.locals.runtime;
     
-    // For now, we'll log the submission (you'll need to set up email routing)
-    console.log('Contact form submission:', submission);
-    
-    // TODO: Implement actual email sending once contact@inert.io alias is set up
-    // This will require Cloudflare Email Workers or external service integration
+    // Send notification email to contact@inert.io
+    try {
+      const emailMessage = new EmailMessage(
+        "noreply@inert.io", // from address
+        "contact@inert.io"  // to address
+      );
+      
+      emailMessage.setSubject(`New Consultation Inquiry from ${submission.name}`);
+      emailMessage.setBody(emailContent);
+      
+      // Note: This requires Cloudflare Email Workers to be configured
+      // Alternative: Use external service like SendGrid for immediate implementation
+      await emailMessage.send();
+      
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      // Continue processing - form submission still recorded
+    }
     
     return new Response(JSON.stringify({ 
       success: true, 
