@@ -28,82 +28,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
     </section>
 
-    <section class="py-16 px-4 sm:px-6 lg:px-8" id="tools">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-slate-700">Tools & Platform Engineering</h2>
-            <div class="max-w-4xl mx-auto text-center mb-12">
-                <p class="text-lg px-4 sm:px-8 text-left">I build comprehensive tooling platforms that transform operational friction into automated excellence. Rather than accepting enterprise constraints as unchangeable, I engineer solutions that work within real-world limitations while dramatically improving productivity and reliability. <a href="/tools" class="text-blue-500 hover:text-blue-600 font-semibold transition-colors">View Full Platform →</a></p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <h3 class="text-center mb-4"><a href="/tools" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">🏥 Fleet Health Monitoring</a></h3>
-                    <p class="text-base"><strong>Challenge:</strong> Manual cluster validation across 6000+ Kubernetes clusters took 5-10 days.<br>
-                    <strong>Solution:</strong> Elixir-based concurrent health monitoring system.<br>
-                    <strong>Impact:</strong> 99.9% time reduction (days to 8-12 minutes), 2000+ engineering hours saved annually.</p>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <h3 class="text-center mb-4"><a href="/tools" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">🎯 Operations Automation</a></h3>
-                    <p class="text-base"><strong>Challenge:</strong> Daily operations required extensive context switching across multiple enterprise systems.<br>
-                    <strong>Solution:</strong> Unified dashboard and automation tools (Rust/Go) integrating Kubernetes, vSphere, ServiceNow, and monitoring systems.<br>
-                    <strong>Impact:</strong> 2-3 hours saved daily, 75% reduction in incident response time.</p>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <h3 class="text-center mb-4"><a href="/tools" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">🚀 Infrastructure Management</a></h3>
-                    <p class="text-base"><strong>Challenge:</strong> Complex GPU and VM lifecycle management across hybrid infrastructure required manual coordination.<br>
-                    <strong>Solution:</strong> Intelligent automation with cross-system correlation and safety validation.<br>
-                    <strong>Impact:</strong> $400K+ operational overhead reduction, eliminated manual errors.</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-8 p-8 bg-gray-50 rounded-lg">
-                <h3 class="text-xl font-semibold text-slate-700 mb-4">Platform Philosophy</h3>
-                <p class="italic text-gray-600 max-w-3xl mx-auto text-lg">
-                    "Enterprise friction should be solved through engineering, not accepted as unchangeable constraint. Each tool represents a decision to automate rather than tolerate, integrate rather than context-switch, and optimize rather than accept suboptimal workflows."
-                </p>
-            </div>
-        </div>
-    </section>
 
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" id="case-studies">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 text-slate-700">Case Studies</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <h3 class="text-center mb-4"><a href="/case-studies/legacy-infrastructure-modernization" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">Legacy Infrastructure Modernization</a></h3>
-                    <p class="text-base"><strong>Challenge:</strong> InfoSec-mandated SLES 11 EOL upgrade across Fortune One retailer's 600+ locations while maintaining existing hardware to maximize asset depreciation.<br>
-                    <strong>Solution:</strong> 18-month platform engineering transformation balancing compliance requirements with business constraints, building comprehensive operational capabilities.<br>
-                    <strong>Impact:</strong> $2M+ cost avoidance, 150:1 location-to-engineer efficiency, zero-downtime migrations with sustainable Day One operations.</p>
+                    <h3 class="text-center mb-4"><a href="/case-studies/legacy-infrastructure-modernization" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">Infrastructure Modernization</a></h3>
+                    <p class="text-base">Transformed a Fortune One retailer's technology infrastructure across 600+ locations, delivering <strong>$2M+ in cost savings</strong> while maintaining business continuity. Achieved <strong>150:1 operational efficiency</strong> and zero-downtime migrations through strategic planning and phased implementation.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <h3 class="text-center mb-4"><a href="/case-studies/platform-engineering" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">Platform Engineering at Scale</a></h3>
-                    <p class="text-base"><strong>Challenge:</strong> 6000+ Kubernetes cluster infrastructure with 5-10 day manual validation cycles costing ~$40M annually in downtime risk.<br>
-                    <strong>Solution:</strong> Engineered concurrent monitoring platform and integrated operations toolkit using Elixir, Rust, and Go.<br>
-                    <strong>Impact:</strong> $400K+ cost avoidance, 99.9% time reduction (days to minutes), 2000+ engineering hours reclaimed annually.</p>
+                    <h3 class="text-center mb-4"><a href="/case-studies/platform-engineering" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">Operational Excellence at Scale</a></h3>
+                    <p class="text-base">Built enterprise automation platform that eliminated weeks of manual work, delivering <strong>$400K+ annual cost avoidance</strong> and reclaiming <strong>2000+ engineering hours yearly</strong>. Reduced critical operational cycles from days to minutes across 6000+ systems.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <h3 class="text-center mb-4"><a href="/case-studies/strategic-architecture" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">Strategic Architecture & Enterprise Decision Dynamics</a></h3>
-                    <p class="text-base"><strong>Challenge:</strong> Design next-generation infrastructure for 600+ locations balancing VMware contract renewal, emerging AI/ML requirements, and enterprise CapEx constraints.<br>
-                    <strong>Solution:</strong> Comprehensive architecture evaluation, vendor management, and financial analysis presenting optimal solutions while respecting business decision-making autonomy.<br>
-                    <strong>Impact:</strong> Strategic foresight validated by subsequent organizational planning, demonstrating sophisticated enterprise consulting approach.</p>
+                    <h3 class="text-center mb-4"><a href="/case-studies/strategic-architecture" class="text-lg font-semibold text-slate-700 hover:text-blue-500 transition-colors">Strategic Technology Planning</a></h3>
+                    <p class="text-base">Guided enterprise architecture decisions for 600+ locations, balancing emerging technology requirements with budget constraints and vendor relationships. Delivered comprehensive analysis that informed <strong>multi-million dollar infrastructure investments</strong> and strategic planning cycles.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-16 px-4 sm:px-6 lg:px-8" id="approach">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-slate-700">My Approach</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-lg mb-6 px-4 sm:px-8 text-left">Every organization is different, but the patterns of technical debt and systemic dysfunction are remarkably consistent. I start by understanding not just what's broken, but why it broke – what organizational or technical constraints led to the current state.</p>
-                
-                <p class="text-lg mb-6 px-4 sm:px-8 text-left">Then I design solutions that work within your actual constraints, not theoretical ideal conditions. This often means building tools and processes that route around organizational limitations while gradually addressing root causes.</p>
-                
-                <p class="text-lg mb-6 px-4 sm:px-8 text-left">The goal isn't just to solve the immediate problem, but to leave you with better systems, clearer processes, and the tools to prevent similar issues in the future.</p>
+            
+            <div class="text-center mt-12 p-8 bg-blue-50 rounded-lg">
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">My Philosophy</h3>
+                <p class="italic text-gray-700 max-w-3xl mx-auto text-lg">
+                    "Technology should accelerate business growth, not constrain it. I work with your existing teams and processes to identify opportunities for automation and optimization that deliver measurable results without disrupting operations."
+                </p>
             </div>
         </div>
     </section>
