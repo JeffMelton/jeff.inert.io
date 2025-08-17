@@ -4,113 +4,45 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Case Studies - Jeff Melton">
     <style>
-        .hero-section {
+        .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            padding: 4rem 2rem;
-        }
-
-        .content-section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            margin-left: 2rem;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 2rem 2rem 2rem;
-        }
-
-        .case-study-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .case-study-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .case-study-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        .case-study-card p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .read-more {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
         }
     </style>
 
-    <section class="hero-section">
-        <div class="container">
-            <h1>Case Studies</h1>
-            <p>Detailed narratives of complex, multi-domain technical challenges and the systematic solutions that transformed organizational capability.</p>
+    <section class="hero-gradient text-white py-16 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Case Studies</h1>
+            <p class="text-lg sm:text-xl opacity-90 max-w-4xl mx-auto">Detailed narratives of complex, multi-domain technical challenges and the systematic solutions that transformed organizational capability.</p>
         </div>
     </section>
 
-    <div class="container">
-        <section class="content-section">
-            <h2>In-Depth Project Analysis</h2>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-slate-700">In-Depth Project Analysis</h2>
             
-            <div class="case-studies-grid">
-                <div class="case-study-card">
-                    <h3>Legacy Infrastructure Modernization</h3>
-                    <p><strong>Challenge:</strong> InfoSec-mandated SLES 11 EOL upgrade across Fortune One retailer's 600+ locations while maintaining existing hardware to maximize asset depreciation.<br>
-                    <strong>Solution:</strong> 18-month platform engineering transformation balancing compliance requirements with business constraints, building comprehensive operational capabilities.<br>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-12 mx-8">
+                <div class="bg-white rounded-lg p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-700">Legacy Infrastructure Modernization</h3>
+                    <p class="text-base mb-6 leading-relaxed"><strong>Challenge:</strong> InfoSec-mandated SLES 11 EOL upgrade across Fortune One retailer's 600+ locations while maintaining existing hardware to maximize asset depreciation.<br />
+                    <strong>Solution:</strong> 18-month platform engineering transformation balancing compliance requirements with business constraints, building comprehensive operational capabilities.<br />
                     <strong>Impact:</strong> $2M+ cost avoidance, 150:1 location-to-engineer efficiency, zero-downtime migrations with sustainable Day One operations.</p>
-                    <a href="/case-studies/legacy-infrastructure-modernization" class="read-more">Read Full Case Study →</a>
+                    <a href="/case-studies/legacy-infrastructure-modernization" class="text-blue-500 no-underline font-semibold hover:underline">Read Full Case Study →</a>
                 </div>
                 
-                <div class="case-study-card">
-                    <h3>Platform Engineering at Scale</h3>
-                    <p><strong>Challenge:</strong> 6000+ Kubernetes cluster infrastructure with 5-10 day manual validation cycles costing ~$40M annually in downtime risk.<br>
-                    <strong>Solution:</strong> Engineered concurrent monitoring platform and integrated operations toolkit using Elixir, Rust, and Go.<br>
+                <div class="bg-white rounded-lg p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-700">Platform Engineering at Scale</h3>
+                    <p class="text-base mb-6 leading-relaxed"><strong>Challenge:</strong> 6000+ Kubernetes cluster infrastructure with 5-10 day manual validation cycles costing ~$40M annually in downtime risk.<br />
+                    <strong>Solution:</strong> Engineered concurrent monitoring platform and integrated operations toolkit using Elixir, Rust, and Go.<br />
                     <strong>Impact:</strong> $400K+ cost avoidance, 99.9% time reduction (days to minutes), 2000+ engineering hours reclaimed annually.</p>
-                    <a href="/case-studies/platform-engineering" class="read-more">Read Full Case Study →</a>
+                    <a href="/case-studies/platform-engineering" class="text-blue-500 no-underline font-semibold hover:underline">Read Full Case Study →</a>
                 </div>
                 
-                <div class="case-study-card">
-                    <h3>Strategic Architecture & Enterprise Decision Dynamics</h3>
-                    <p><strong>Challenge:</strong> Design next-generation infrastructure for 600+ locations balancing VMware contract renewal, emerging AI/ML requirements, and enterprise CapEx constraints.<br>
-                    <strong>Solution:</strong> Comprehensive architecture evaluation, vendor management, and financial analysis presenting optimal solutions while respecting business decision-making autonomy.<br>
+                <div class="bg-white rounded-lg p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-700">Strategic Architecture & Enterprise Decision Dynamics</h3>
+                    <p class="text-base mb-6 leading-relaxed"><strong>Challenge:</strong> Design next-generation infrastructure for 600+ locations balancing VMware contract renewal, emerging AI/ML requirements, and enterprise CapEx constraints.<br />
+                    <strong>Solution:</strong> Comprehensive architecture evaluation, vendor management, and financial analysis presenting optimal solutions while respecting business decision-making autonomy.<br />
                     <strong>Impact:</strong> Strategic foresight validated by subsequent organizational planning, demonstrating sophisticated enterprise consulting approach to complex technology decisions.</p>
-                    <a href="/case-studies/strategic-architecture" class="read-more">Read Full Case Study →</a>
+                    <a href="/case-studies/strategic-architecture" class="text-blue-500 no-underline font-semibold hover:underline">Read Full Case Study →</a>
                 </div>
             </div>
         </section>

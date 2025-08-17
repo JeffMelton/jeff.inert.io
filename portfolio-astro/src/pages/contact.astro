@@ -4,98 +4,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Contact - Jeff Melton">
     <style>
-        .hero-section {
+        .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            padding: 4rem 2rem;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-
-        .calendar-section {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 3rem;
-            text-align: center;
-        }
-
-        .calendar-section h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .calendar-section p {
-            margin-bottom: 2rem;
-            color: #666;
-        }
-
-        .calendly-inline-widget {
-            min-width: 320px;
-            height: 700px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            
-            
-            .content-section {
-                padding: 2rem 1rem;
-            }
         }
     </style>
 
-    <section class="hero-section">
-        <div class="container">
-            <h1>Schedule a Consultation</h1>
-            <p>Ready to solve complex technical challenges? Let's discuss how platform engineering and systematic problem-solving can transform your organization.</p>
+    <section class="hero-gradient text-white py-16 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Schedule a Consultation</h1>
+            <p class="text-lg sm:text-xl opacity-90 max-w-4xl mx-auto">Ready to solve complex technical challenges? Let's discuss how platform engineering and systematic problem-solving can transform your organization.</p>
         </div>
     </section>
 
-    <div class="container">
-        <section class="content-section">
-            <div class="contact-container">
-                <div class="calendar-section">
-                    <h3>Book Your 30-Minute Consultation</h3>
-                    <p>Discuss your specific technical challenges and explore how platform engineering can solve systemic problems in your organization. I'll help you understand the scope of your challenges and potential solutions.</p>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-12 text-center">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-700">Book Your 30-Minute Consultation</h3>
+                    <p class="text-lg mb-8 text-gray-600">Discuss your specific technical challenges and explore how platform engineering can solve systemic problems in your organization. I'll help you understand the scope of your challenges and potential solutions.</p>
                     
                     <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/jeff-n-melton/30min?hide_gdpr_banner=1&primary_color=667eea"></div>
+                    <div class="calendly-inline-widget min-w-80 h-[700px] rounded-lg overflow-hidden shadow-lg" data-url="https://calendly.com/jeff-n-melton/30min?hide_gdpr_banner=1&primary_color=667eea"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                     <!-- Calendly inline widget end -->
                 </div>
                 
-                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
-                    <h4 style="color: #2c3e50; margin-bottom: 1rem;">Prefer Email?</h4>
-                    <p style="color: #666; margin-bottom: 1rem;">For detailed project discussions or if you prefer email communication:</p>
-                    <a href="mailto:jeff.n.melton@gmail.com" style="color: #3498db; text-decoration: none; font-weight: 600;">jeff.n.melton@gmail.com</a>
+                <div class="text-center mt-12 p-8 bg-gray-50 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-4 text-slate-700">Prefer Email?</h4>
+                    <p class="text-lg mb-4 text-gray-600">For detailed project discussions or if you prefer email communication:</p>
+                    <a href="mailto:jeff.n.melton@gmail.com" class="text-blue-500 no-underline font-semibold hover:underline">jeff.n.melton@gmail.com</a>
                 </div>
             </div>
         </section>

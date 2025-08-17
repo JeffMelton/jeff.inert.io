@@ -4,278 +4,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Platform Engineering at Scale - Case Study - Jeff Melton">
     <style>
-        .hero-section {
+        .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            padding: 3rem 2rem;
-        }
-
-        .content-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            margin-left: 2rem;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
-        }
-
-        .content-section h3 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem 2rem;
-            color: #34495e;
-        }
-
-        .content-section p, .content-section li {
-            margin-bottom: 1rem;
-            margin-left: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .content-section ul {
-            margin-left: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-section ol {
-            margin-left: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .executive-summary {
-            background: #e8f4f8;
-            border-left: 5px solid #3498db;
-            padding: 2rem;
-            margin: 2rem;
-            border-radius: 5px;
-        }
-
-        .executive-summary h3 {
-            color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        .warning-box {
-            background: #fff3cd;
-            border-left: 5px solid #f39c12;
-            padding: 1.5rem;
-            margin: 2rem;
-            border-radius: 5px;
-        }
-
-        .warning-box h4 {
-            color: #d68910;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        .solution-panel {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem;
-        }
-
-        .solution-panel.health { border-left: 5px solid #27ae60; }
-        .solution-panel.ops { border-left: 5px solid #2980b9; }
-        .solution-panel.infra { border-left: 5px solid #e74c3c; }
-
-        .solution-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        .solution-title.health { color: #27ae60; }
-        .solution-title.ops { color: #2980b9; }
-        .solution-title.infra { color: #e74c3c; }
-
-        .problem-solution {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 1.5rem 0;
-        }
-
-        .problem, .solution {
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .problem {
-            background: #ffe6e6;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .solution {
-            background: #e6f7e6;
-            border-left: 4px solid #27ae60;
-        }
-
-        .problem h4, .solution h4 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-            font-size: 1.1rem;
-        }
-
-        .metrics-table {
-            width: calc(100% - 4rem);
-            border-collapse: collapse;
-            margin: 2rem;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .metrics-table th {
-            background: #3498db;
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .metrics-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .metrics-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .metrics-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem;
-        }
-
-        .impact-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-top: 4px solid #3498db;
-        }
-
-        .impact-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #3498db;
-            display: block;
-        }
-
-        .impact-label {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .success-box {
-            background: #d4edda;
-            border-left: 5px solid #28a745;
-            padding: 2rem;
-            margin: 2rem;
-            border-radius: 5px;
-        }
-
-        .success-box h3 {
-            color: #155724;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        .innovation-list {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem;
-        }
-
-        .innovation-list ul {
-            margin: 0;
-        }
-
-        .innovation-list li {
-            margin-bottom: 0.8rem;
-        }
-
-        .tip-box {
-            background: #d1ecf1;
-            border-left: 5px solid #17a2b8;
-            padding: 2rem;
-            margin: 2rem;
-            border-radius: 5px;
-        }
-
-        .tip-box h4 {
-            color: #0c5460;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            
-            .problem-solution {
-                grid-template-columns: 1fr;
-            }
-            
-            .content-section {
-                padding: 2rem 0;
-            }
         }
     </style>
 
-    <section class="hero-section">
-        <div class="container">
-            <h1>Platform Engineering at Scale</h1>
-            <p>Transforming manual infrastructure operations into automated, scalable processes across 6000+ Kubernetes clusters</p>
+    <section class="hero-gradient text-white py-16 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Platform Engineering at Scale</h1>
+            <p class="text-lg sm:text-xl opacity-90 max-w-4xl mx-auto">Transforming manual infrastructure operations into automated, scalable processes across 6000+ Kubernetes clusters</p>
         </div>
     </section>
 
-    <div class="container">
-        <section class="content-section">
-            <div class="executive-summary">
-                <h3>Executive Summary</h3>
-                <p>Software engineering solutions that transformed manual, time-intensive infrastructure operations into automated, scalable processes - delivering <strong>$400K+ annual cost avoidance</strong> and <strong>2000+ engineering hours</strong> in productivity gains.</p>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12">
+            <div class="bg-blue-50 border-l-8 border-l-blue-500 p-8 mx-8 mb-8 rounded">
+                <h3 class="text-lg font-semibold mb-4 text-slate-700">Executive Summary</h3>
+                <p class="text-lg leading-relaxed">Software engineering solutions that transformed manual, time-intensive infrastructure operations into automated, scalable processes - delivering <strong>$400K+ annual cost avoidance</strong> and <strong>2000+ engineering hours</strong> in productivity gains.</p>
             </div>
 
-            <h2>Business Challenge</h2>
-            <p>Our 6000+ Kubernetes cluster edge infrastructure faced critical operational challenges:</p>
-            <ul>
+            <h2 class="text-2xl font-bold mb-6 px-8 text-slate-700 border-b-4 border-blue-500 pb-2">Business Challenge</h2>
+            <p class="text-lg mb-4 px-8 leading-relaxed">Our 6000+ Kubernetes cluster edge infrastructure faced critical operational challenges:</p>
+            <ul class="text-lg space-y-4 px-14 mb-6 leading-relaxed">
                 <li><strong>Manual health checks</strong> required 5-10 days of engineering time per validation cycle</li>
                 <li><strong>Infrastructure failures</strong> went undetected until customer impact occurred</li>
                 <li><strong>Fragmented tooling</strong> across multiple enterprise systems created workflow friction</li>
@@ -283,180 +33,184 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <li><strong>Reactive approach</strong> to infrastructure issues cost ~$40M annually in downtime</li>
             </ul>
 
-            <div class="warning-box">
-                <h4>Root Cause</h4>
-                <p>Lack of integrated tooling and automated processes to manage enterprise-scale edge infrastructure effectively.</p>
+            <div class="bg-yellow-50 border-l-8 border-l-orange-500 p-6 mx-8 mb-8 rounded">
+                <h4 class="text-lg font-semibold mb-4 text-orange-700">Root Cause</h4>
+                <p class="text-lg leading-relaxed">Lack of integrated tooling and automated processes to manage enterprise-scale edge infrastructure effectively.</p>
             </div>
 
-            <h2>Software Engineering Solutions</h2>
+            <h2 class="text-2xl font-bold mb-6 px-8 text-slate-700 border-b-4 border-blue-500 pb-2">Software Engineering Solutions</h2>
 
-            <div class="solution-panel health">
-                <div class="solution-title health">🏥 Concurrent Fleet Monitoring Platform</div>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mx-8 mb-8 border-l-8 border-l-green-500">
+                <div class="text-xl font-semibold mb-4 text-green-600">🏥 Concurrent Fleet Monitoring Platform</div>
                 
-                <div class="problem-solution">
-                    <div class="problem">
-                        <h4>Problem</h4>
-                        <p>Manual cluster validation across 6000+ locations was operationally unsustainable</p>
+                <div class="grid md:grid-cols-2 gap-8 my-6">
+                    <div class="bg-red-50 border-l-4 border-l-red-500 p-6 rounded">
+                        <h4 class="font-semibold mb-4 text-slate-700 text-lg">Problem</h4>
+                        <p class="text-lg leading-relaxed">Manual cluster validation across 6000+ locations was operationally unsustainable</p>
                     </div>
-                    <div class="solution">
-                        <h4>Solution</h4>
-                        <p>Built high-performance monitoring system using Elixir's concurrent programming model</p>
+                    <div class="bg-green-50 border-l-4 border-l-green-500 p-6 rounded">
+                        <h4 class="font-semibold mb-4 text-slate-700 text-lg">Solution</h4>
+                        <p class="text-lg leading-relaxed">Built high-performance monitoring system using Elixir's concurrent programming model</p>
                     </div>
                 </div>
 
-                <div class="innovation-list">
-                    <ul>
+                <div class="bg-gray-50 p-8 rounded-lg my-8">
+                    <ul class="text-lg space-y-3 leading-relaxed">
                         <li><strong>50-worker parallelism</strong> with fault-tolerant execution</li>
                         <li><strong>Enterprise system integration</strong> (Prometheus, Alertmanager, ServiceNow)</li>
                         <li><strong>Intelligent failure handling</strong> with graceful degradation</li>
                     </ul>
                 </div>
 
-                <p><strong>Business Impact:</strong></p>
-                <ul>
+                <p class="text-lg font-semibold mb-4">Business Impact:</p>
+                <ul class="text-lg space-y-3 leading-relaxed">
                     <li><strong>99.9% time reduction</strong>: 5-10 days → 8-12 minutes for fleet validation</li>
                     <li><strong>600-1800x performance improvement</strong> over sequential approaches</li>
                     <li><strong>$400K+ annual cost avoidance</strong> in operational overhead</li>
                 </ul>
             </div>
 
-            <div class="solution-panel ops">
-                <div class="solution-title ops">🎯 Integrated Operations Toolkit</div>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mx-8 mb-8 border-l-8 border-l-blue-600">
+                <div class="text-xl font-semibold mb-4 text-blue-600">🎯 Integrated Operations Toolkit</div>
                 
-                <div class="problem-solution">
-                    <div class="problem">
-                        <h4>Problem</h4>
-                        <p>Context switching across multiple enterprise systems created inefficiency and errors</p>
+                <div class="grid md:grid-cols-2 gap-8 my-6">
+                    <div class="bg-red-50 border-l-4 border-l-red-500 p-6 rounded">
+                        <h4 class="font-semibold mb-4 text-slate-700 text-lg">Problem</h4>
+                        <p class="text-lg leading-relaxed">Context switching across multiple enterprise systems created inefficiency and errors</p>
                     </div>
-                    <div class="solution">
-                        <h4>Solution</h4>
-                        <p>Developed unified toolchain in Rust/Go with intelligent automation</p>
+                    <div class="bg-green-50 border-l-4 border-l-green-500 p-6 rounded">
+                        <h4 class="font-semibold mb-4 text-slate-700 text-lg">Solution</h4>
+                        <p class="text-lg leading-relaxed">Developed unified toolchain in Rust/Go with intelligent automation</p>
                     </div>
                 </div>
 
-                <div class="innovation-list">
-                    <ul>
+                <div class="bg-gray-50 p-8 rounded-lg my-8">
+                    <ul class="text-lg space-y-3 leading-relaxed">
                         <li><strong>Single-command dashboards</strong> aggregating Kubernetes, vSphere, and enterprise systems</li>
                         <li><strong>Automated workflow integration</strong> with ServiceNow and monitoring platforms</li>
                         <li><strong>Error-resistant processes</strong> eliminating manual transcription mistakes</li>
                     </ul>
                 </div>
 
-                <p><strong>Business Impact:</strong></p>
-                <ul>
+                <p class="text-lg font-semibold mb-4">Business Impact:</p>
+                <ul class="text-lg space-y-3 mb-6 leading-relaxed">
                     <li><strong>75% reduction in Mean Time to Context</strong> for incident response</li>
                     <li><strong>95% elimination of manual process errors</strong></li>
                     <li><strong>50% daily productivity improvement</strong> through workflow optimization</li>
                 </ul>
                 
-                <p style="margin-top: 1.5rem; padding: 1rem; background: #f0f8ff; border-radius: 5px; border-left: 3px solid #3498db;">
-                    <strong>→ View Technical Details:</strong> See the complete <a href="/tools" style="color: #3498db; text-decoration: none; font-weight: 600;">Enterprise Platform Engineering Operations Suite</a> for in-depth tool documentation and implementation details.
-                </p>
+                <div class="mt-6 p-4 bg-blue-50 rounded border-l-4 border-l-blue-500">
+                    <p class="text-lg leading-relaxed">
+                        <strong>→ View Technical Details:</strong> See the complete <a href="/tools" class="text-blue-500 no-underline font-semibold hover:underline">Enterprise Platform Engineering Operations Suite</a> for in-depth tool documentation and implementation details.
+                    </p>
+                </div>
             </div>
 
-            <div class="solution-panel infra">
-                <div class="solution-title infra">🚀 Infrastructure Lifecycle Management</div>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mx-8 mb-8 border-l-8 border-l-red-500">
+                <div class="text-xl font-semibold mb-4 text-red-600">🚀 Infrastructure Lifecycle Management</div>
                 
-                <div class="problem-solution">
-                    <div class="problem">
-                        <h4>Problem</h4>
-                        <p>VM and node operations required manual coordination across multiple system boundaries</p>
+                <div class="grid md:grid-cols-2 gap-8 my-6">
+                    <div class="bg-red-50 border-l-4 border-l-red-500 p-6 rounded">
+                        <h4 class="font-semibold mb-4 text-slate-700 text-lg">Problem</h4>
+                        <p class="text-lg leading-relaxed">VM and node operations required manual coordination across multiple system boundaries</p>
                     </div>
-                    <div class="solution">
-                        <h4>Solution</h4>
-                        <p>Built intelligent infrastructure management platform with safety controls</p>
+                    <div class="bg-green-50 border-l-4 border-l-green-500 p-6 rounded">
+                        <h4 class="font-semibold mb-4 text-slate-700 text-lg">Solution</h4>
+                        <p class="text-lg leading-relaxed">Built intelligent infrastructure management platform with safety controls</p>
                     </div>
                 </div>
 
-                <div class="innovation-list">
-                    <ul>
+                <div class="bg-gray-50 p-8 rounded-lg my-8">
+                    <ul class="text-lg space-y-3 leading-relaxed">
                         <li><strong>Automated node lifecycle</strong> with workload-aware operations</li>
                         <li><strong>Cross-system correlation</strong> between Kubernetes, virtualization, and network layers</li>
                         <li><strong>Enterprise integration</strong> providing complete context for support teams</li>
                     </ul>
                 </div>
 
-                <p><strong>Business Impact:</strong></p>
-                <ul>
+                <p class="text-lg font-semibold mb-4">Business Impact:</p>
+                <ul class="text-lg space-y-3 leading-relaxed">
                     <li><strong>Safe, automated operations</strong> reducing human error risk</li>
                     <li><strong>Complete troubleshooting context</strong> for L1/L2 support teams</li>
                     <li><strong>Scalable processes</strong> supporting 10x infrastructure growth with same team size</li>
                 </ul>
             </div>
 
-            <h2>Operational Excellence Results</h2>
+            <h2 class="text-2xl font-bold mb-6 px-8 text-slate-700 border-b-4 border-blue-500 pb-2">Operational Excellence Results</h2>
 
-            <h3>Quantified Improvements</h3>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Metric</th>
-                        <th>Before</th>
-                        <th>After</th>
-                        <th>Improvement</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Fleet Health Validation</strong></td>
-                        <td>5-10 days</td>
-                        <td>8-12 minutes</td>
-                        <td>600-1800x faster</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Daily Operational Tasks</strong></td>
-                        <td>6-8 hours</td>
-                        <td>3-4 hours</td>
-                        <td>50% time savings</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Context Switching Time</strong></td>
-                        <td>5+ minutes/task</td>
-                        <td>10 seconds/task</td>
-                        <td>30x reduction</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Manual Process Errors</strong></td>
-                        <td>15-20%</td>
-                        <td>&lt;1%</td>
-                        <td>95% improvement</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3 class="text-xl font-semibold mb-4 px-8 text-slate-600">Quantified Improvements</h3>
+            <div class="mx-8 mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-blue-500 text-white">
+                            <th class="p-4 text-left font-semibold">Metric</th>
+                            <th class="p-4 text-left font-semibold">Before</th>
+                            <th class="p-4 text-left font-semibold">After</th>
+                            <th class="p-4 text-left font-semibold">Improvement</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-lg">
+                        <tr class="border-b border-gray-200">
+                            <td class="p-4"><strong>Fleet Health Validation</strong></td>
+                            <td class="p-4">5-10 days</td>
+                            <td class="p-4">8-12 minutes</td>
+                            <td class="p-4">600-1800x faster</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b border-gray-200">
+                            <td class="p-4"><strong>Daily Operational Tasks</strong></td>
+                            <td class="p-4">6-8 hours</td>
+                            <td class="p-4">3-4 hours</td>
+                            <td class="p-4">50% time savings</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="p-4"><strong>Context Switching Time</strong></td>
+                            <td class="p-4">5+ minutes/task</td>
+                            <td class="p-4">10 seconds/task</td>
+                            <td class="p-4">30x reduction</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-4"><strong>Manual Process Errors</strong></td>
+                            <td class="p-4">15-20%</td>
+                            <td class="p-4">&lt;1%</td>
+                            <td class="p-4">95% improvement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <h3>Cost Impact</h3>
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <span class="impact-number">$400K+</span>
-                    <span class="impact-label">Annual operational<br>cost avoidance</span>
+            <h3 class="text-xl font-semibold mb-4 px-8 text-slate-600">Cost Impact</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-8 mb-8">
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg border-t-4 border-t-blue-500">
+                    <span class="block text-3xl font-bold text-blue-500 mb-2">$400K+</span>
+                    <span class="text-sm text-gray-600 font-medium">Annual operational<br />cost avoidance</span>
                 </div>
-                <div class="impact-card">
-                    <span class="impact-number">2000+</span>
-                    <span class="impact-label">Engineering hours<br>reclaimed annually</span>
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg border-t-4 border-t-blue-500">
+                    <span class="block text-3xl font-bold text-blue-500 mb-2">2000+</span>
+                    <span class="text-sm text-gray-600 font-medium">Engineering hours<br />reclaimed annually</span>
                 </div>
-                <div class="impact-card">
-                    <span class="impact-number">$40M</span>
-                    <span class="impact-label">Downtime reduction<br>opportunity</span>
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg border-t-4 border-t-blue-500">
+                    <span class="block text-3xl font-bold text-blue-500 mb-2">$40M</span>
+                    <span class="text-sm text-gray-600 font-medium">Downtime reduction<br />opportunity</span>
                 </div>
-                <div class="impact-card">
-                    <span class="impact-number">10x</span>
-                    <span class="impact-label">Team scalability without<br>proportional headcount</span>
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg border-t-4 border-t-blue-500">
+                    <span class="block text-3xl font-bold text-blue-500 mb-2">10x</span>
+                    <span class="text-sm text-gray-600 font-medium">Team scalability without<br />proportional headcount</span>
                 </div>
             </div>
 
-            <h3>Knowledge Transfer & Risk Mitigation</h3>
-            <ul>
+            <h3 class="text-xl font-semibold mb-4 px-8 text-slate-600">Knowledge Transfer & Risk Mitigation</h3>
+            <ul class="text-lg space-y-4 px-14 mb-8 leading-relaxed">
                 <li><strong>Institutional knowledge encoded</strong> in executable, documented tools</li>
                 <li><strong>Reduced bus factor</strong> for mission-critical operations</li>
                 <li><strong>Junior engineer enablement</strong> through automated best practices</li>
                 <li><strong>Training acceleration</strong> from months to days for new team members</li>
             </ul>
 
-            <h2>Technical Innovation Highlights</h2>
+            <h2 class="text-2xl font-bold mb-6 px-8 text-slate-700 border-b-4 border-blue-500 pb-2">Technical Innovation Highlights</h2>
 
-            <h3>Modern Development Practices</h3>
-            <div class="innovation-list">
-                <ul>
+            <h3 class="text-xl font-semibold mb-4 px-8 text-slate-600">Modern Development Practices</h3>
+            <div class="bg-gray-50 p-8 rounded-lg mx-8 mb-8">
+                <ul class="text-lg space-y-3 leading-relaxed">
                     <li><strong>AI-assisted development</strong> demonstrating cutting-edge productivity approaches</li>
                     <li><strong>Language-specific optimization</strong> (Elixir concurrency, Rust performance, Go ecosystem)</li>
                     <li><strong>Enterprise constraint navigation</strong> working within security and compliance requirements</li>
@@ -464,9 +218,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 </ul>
             </div>
 
-            <h3>Platform Engineering Approach</h3>
-            <div class="innovation-list">
-                <ul>
+            <h3 class="text-xl font-semibold mb-4 px-8 text-slate-600">Platform Engineering Approach</h3>
+            <div class="bg-gray-50 p-8 rounded-lg mx-8 mb-8">
+                <ul class="text-lg space-y-3 leading-relaxed">
                     <li><strong>Systems thinking</strong> across organizational and technical boundaries</li>
                     <li><strong>Developer experience optimization</strong> reducing cognitive load and workflow friction</li>
                     <li><strong>Force multiplication</strong> building tools that scale individual productivity to team effectiveness</li>
@@ -474,9 +228,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 </ul>
             </div>
 
-            <h3>Enterprise Integration Expertise</h3>
-            <div class="innovation-list">
-                <ul>
+            <h3 class="text-xl font-semibold mb-4 px-8 text-slate-600">Enterprise Integration Expertise</h3>
+            <div class="bg-gray-50 p-8 rounded-lg mx-8 mb-8">
+                <ul class="text-lg space-y-3 leading-relaxed">
                     <li><strong>Zero-credential architecture</strong> leveraging existing authentication and RBAC</li>
                     <li><strong>Multi-system correlation</strong> providing unified views across disparate platforms</li>
                     <li><strong>Workflow automation</strong> integrating business processes with technical operations</li>
@@ -484,24 +238,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 </ul>
             </div>
 
-            <div class="success-box">
-                <h3>Key Outcomes</h3>
-                <p><strong>Immediate Impact:</strong> Transformed unsustainable manual processes into scalable, automated operations that deliver measurable business value.</p>
+            <div class="bg-green-50 border-l-8 border-l-green-500 p-8 mx-8 mb-8 rounded">
+                <h3 class="text-lg font-semibold mb-4 text-green-700">Key Outcomes</h3>
+                <p class="text-lg mb-4 leading-relaxed"><strong>Immediate Impact:</strong> Transformed unsustainable manual processes into scalable, automated operations that deliver measurable business value.</p>
                 
-                <p><strong>Long-term Platform:</strong> Created reusable tooling and encoded institutional knowledge that enables team scaling and reduces operational risk.</p>
+                <p class="text-lg mb-4 leading-relaxed"><strong>Long-term Platform:</strong> Created reusable tooling and encoded institutional knowledge that enables team scaling and reduces operational risk.</p>
                 
-                <p><strong>Innovation Leadership:</strong> Demonstrated modern software engineering practices (AI-assisted development, concurrent programming, enterprise integration) that align with organizational technology strategy.</p>
+                <p class="text-lg mb-4 leading-relaxed"><strong>Innovation Leadership:</strong> Demonstrated modern software engineering practices (AI-assisted development, concurrent programming, enterprise integration) that align with organizational technology strategy.</p>
                 
-                <p><strong>Business Alignment:</strong> Delivered quantifiable cost savings and productivity improvements while maintaining operational excellence and reducing customer impact.</p>
+                <p class="text-lg leading-relaxed"><strong>Business Alignment:</strong> Delivered quantifiable cost savings and productivity improvements while maintaining operational excellence and reducing customer impact.</p>
             </div>
 
-            <div class="tip-box">
-                <h4>Strategic Insight</h4>
-                <p>This case study demonstrates how software engineering discipline applied to operational challenges can deliver transformational business impact while building sustainable, scalable solutions.</p>
+            <div class="bg-cyan-50 border-l-8 border-l-cyan-500 p-8 mx-8 mb-8 rounded">
+                <h4 class="text-lg font-semibold mb-4 text-cyan-700">Strategic Insight</h4>
+                <p class="text-lg leading-relaxed">This case study demonstrates how software engineering discipline applied to operational challenges can deliver transformational business impact while building sustainable, scalable solutions.</p>
             </div>
 
-            <h2>Recommendations</h2>
-            <ol>
+            <h2 class="text-2xl font-bold mb-6 px-8 text-slate-700 border-b-4 border-blue-500 pb-2">Recommendations</h2>
+            <ol class="text-lg space-y-4 px-14 mb-6 leading-relaxed list-decimal">
                 <li><strong>Expand Platform Approach:</strong> Apply these software engineering methodologies to other operational domains</li>
                 <li><strong>Knowledge Sharing:</strong> Leverage this expertise to accelerate similar initiatives across the organization</li>
                 <li><strong>Team Development:</strong> Use these tools and approaches as training materials for scaling engineering practices</li>
